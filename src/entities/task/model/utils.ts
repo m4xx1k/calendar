@@ -19,7 +19,7 @@ export function generateTasks(date: number): Task[] {
 		const titleLength = Math.floor(Math.random() * 5) + 5
 		const title = generateRandomWord(titleLength)
 
-		tasks.push({ id, title, order: i, date })
+		tasks.push({ id, title, order: i, date, tags: [] })
 	}
 
 	return tasks

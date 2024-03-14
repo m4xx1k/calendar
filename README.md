@@ -18,7 +18,7 @@
 - Filtering tasks in the calendar by searching text, implemented with debounce to optimize the search functionality.
 - Create and edit labels for tasks (color, text).
 - Show worldwide holidays for each day in the calendar.
-- Infinity scroll
+- Infinity scroll (scroll to top/bottom to change month)
 
 ### Built With
 
