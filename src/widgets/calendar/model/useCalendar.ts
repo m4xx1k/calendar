@@ -13,15 +13,13 @@ const initialDate = new Date(
 
 export const useCalendar = () => {
 	const [date, setDate] = useState<number>(initialDate)
-	const [calendar, setCalendar] = useState<Month[]>([])
+	const [month, setMonth] = useState<Month | null>(null)
 
 	useEffect(() => {
 		const weeks = generateWeeksWithDays(date)
-		setCalendar([
-			{
-				weeks,
-			},
-		])
+		setMonth({
+			weeks,
+		})
 	}, [date])
 
 	const addMonth = () => {
@@ -33,7 +31,7 @@ export const useCalendar = () => {
 	}
 
 	return {
-		calendar,
+		month,
 		addMonth,
 		subtractMonth,
 		date,

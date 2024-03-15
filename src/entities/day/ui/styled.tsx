@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const StyledDay = styled.div<{ $dayOfMonth: boolean | undefined }>`
 	position: relative;
+	margin-left: 2px;
 	width: 12vw;
 	height: 150px;
 	padding: 10px;

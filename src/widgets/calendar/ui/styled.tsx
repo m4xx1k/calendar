@@ -9,12 +9,6 @@ export const StyledContainer = styled.main`
 	color: var(--light);
 `
 
-export const StyledMonthName = styled.h2`
-	margin-top: 40px;
-	margin-bottom: 8px;
-	font-size: 2rem;
-`
-
 export const StyledCalendar = styled.div`
 	display: flex;
 	flex-direction: column;

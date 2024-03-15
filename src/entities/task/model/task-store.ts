@@ -113,6 +113,7 @@ export const useTaskStore = create<
 				}),
 			addTask: (data: AddTaskType) =>
 				set(state => {
+					console.log('hereee')
 					const newTask = {
 						...data,
 						id: data.title + data.date,

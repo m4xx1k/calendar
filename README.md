@@ -5,7 +5,7 @@
   <p align="center">
     Test task for Middle(Strong Junior) JavaScript(TypeScript) Full-stack developer
     <br />
-    <a href="#"><strong>Demo</strong></a>
+    <a href="https://vanilla-dnd-calendar.vercel.app/"><strong>Demo</strong></a>
  
   </p>
 </div>
@@ -18,7 +18,8 @@
 - Filtering tasks in the calendar by searching text, implemented with debounce to optimize the search functionality.
 - Create and edit labels for tasks (color, text).
 - Show worldwide holidays for each day in the calendar.
-- Infinity scroll (scroll to top/bottom to change month)
+- Infinity scroll (scroll to top/bottom to change month or use buttons).
+- All data stored in localStorage.
 
 ### Built With
 

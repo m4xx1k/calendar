@@ -21,8 +21,10 @@ export const TaskForm = ({ type, task, date, cb }: Props) => {
 	const { deleteTask, updateTask, addTask } = useTaskStore()
 	const submit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
+		console.log(1)
 		if (!title) return
 		if (type === 'create' && date) {
+			console.log('heree')
 			addTask({ title, date, tags })
 			setTitle('')
 		}

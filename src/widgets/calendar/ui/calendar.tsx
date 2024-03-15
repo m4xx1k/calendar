@@ -1,13 +1,12 @@
-import { format } from 'date-fns'
 import { Fragment } from 'react'
 import {
 	StyledCalendar,
 	StyledContainer,
-	StyledMonthName,
 	StyledTopSection,
 	StyledWeekRow,
 } from '.'
 import { CalendarDayItem } from '../../../entities/day/ui/'
+import { MonthNavigation } from '../../../features/calendar/ui'
 import { useHoliday } from '../../../features/holiday/model/use-holiday'
 import { SelectCountry } from '../../../features/holiday/ui'
 import { InfiniteScrollTrigger } from '../../../features/infinity-scroll/ui'
@@ -15,7 +14,7 @@ import { TasksSearch } from '../../../features/task/ui'
 import { useCalendar } from '../model'
 
 export const Calendar = () => {
-	const { date, calendar, addMonth, subtractMonth } = useCalendar()
+	const { date, month, addMonth, subtractMonth } = useCalendar()
 	const { holidays, selectCountryProps } = useHoliday(date)
 	return (
 		<StyledContainer>
@@ -26,10 +25,14 @@ export const Calendar = () => {
 			</StyledTopSection>
 
 			<StyledCalendar>
-				{calendar.map((monthData, i) => (
-					<Fragment key={i}>
-						<StyledMonthName>{format(date, 'MMMM yyyy')}</StyledMonthName>
-						{monthData.weeks.map((week, i) => (
+				{month && (
+					<Fragment>
+						<MonthNavigation
+							date={date}
+							addMonth={addMonth}
+							subtractMonth={subtractMonth}
+						/>
+						{month.weeks.map((week, i) => (
 							<StyledWeekRow key={i}>
 								{week.map((day, i) => (
 									<CalendarDayItem
@@ -41,7 +44,7 @@ export const Calendar = () => {
 							</StyledWeekRow>
 						))}
 					</Fragment>
-				))}
+				)}
 			</StyledCalendar>
 			<InfiniteScrollTrigger cb={addMonth} position='bottom' />
 		</StyledContainer>

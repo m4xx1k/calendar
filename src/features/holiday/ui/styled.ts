@@ -18,6 +18,7 @@ export const StyledSelectedCountry = styled.p`
 	justify-content: space-between;
 	width: 100%;
 	padding-right: 12px;
+	user-select: none;
 `
 export const StyledSelectCountryList = styled.ul`
 	position: absolute;
